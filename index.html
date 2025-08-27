@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1</title>
+
+    <!-- ============================== LIENS VERS DOSSIER CSS POUR LE STYLE DE LA PAGE ============================== -->
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- ============================== LIENS GOOGLE FONT ET ICONES POUR LES TYPOGRAPHIES ET LES ICONES ============================== -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined|Material+Icons|Material+Icons+Outlined"/>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Rammetto+One&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- ============================== SCRIPT JAVASCRIPT ============================== -->
+    <script src="assets/js/index.js" defer></script>
+</head>
+
+<body>
+    <!-- Cet input permet d'afficher ou de cache le menu de navigation de la page en format mobile -->
+    <input type="checkbox" id="bouton-menu-burger" class="bouton-burger">
+    <header>
+        <div class="profil">
+            <picture class="photo-profil">
+                <source media="(min-width: 992px)" srcset="assets/images/header-main/img3.jpg">
+                <source media="(min-width: 576px)" srcset="assets/images/header-main/img2.jpg">
+                <img src="assets/images/header-main/img1.jpg" alt="Une photo de moi">
+            </picture>
+            <div class="nom-et-fonction">
+                <h2 class="mon-nom">OLIVIER VERNET</h2>
+                <h3 class="mon-titre">Intégrateur Multimédias</h3>
+            </div>
+        </div>
+
+        <div class="barre-navigation">
+            <nav class="navigation">
+                <a class="menu menu1" href="#moi">Moi</a>
+                <a class="menu menu2" href="#formations">Formations</a>
+                <a class="menu menu3" href="#realisations">Réalisations</a>
+
+                <div class="contact">
+                    <h2 class="coordonnees">
+                        <span class="material-icons telephone">smartphone</span>
+                        514-207-2249
+                    </h2>
+                    <h2 class="coordonnees">
+                        <span class="material-icons courriel">email</span>
+                        olivier_vernet@yahoo.ca
+                    </h2>
+                    <h2 class="coordonnees"><span class="material-icons liens">link</span>
+
+                    </h2>
+                    <h2 class="coordonnees"><span class="material-icons liens">link</span>
+
+                    </h2>
+                    <h2 class="coordonnees"><span class="material-icons liens">link</span>
+
+                    </h2>
+                </div>
+            </nav>
+
+            <label for="bouton-menu-burger" class="bouton">
+                <div class="ligne ligne1"></div>
+                <div class="ligne ligne2"></div>
+                <div class="ligne ligne3"></div>
+                <div class="ligne ligne4"></div>
+            </label>
+        </div>
+    </header>
+
+    <main>
+        <!-- Ici, chaque lettre se trouve dans un div afin de permettre que la rotation et l'effet 3D se fassent sur chaque lettre et non sur le mot en un seul bloc; ce qui n'aurait pas le même effet -->
+        <section class="titre">
+            <div class="lettre">P</div>
+            <div class="lettre">O</div>
+            <div class="lettre">R</div>
+            <div class="lettre">T</div>
+            <div class="lettre">F</div>
+            <div class="lettre">O</div>
+            <div class="lettre">L</div>
+            <div class="lettre">I</div>
+            <div class="lettre">O</div>
+        </section>
+        <section class="bienvenue">
+            <span class="mot-bienvenue">
+                Bienvenue!
+            </span>
+        </section>
+
+        <!-- ============================== SECTION CONTENANT UNE COURTE DESCRIPTION DE MOI ============================== -->
+        <section id="moi">
+            <div class="forme rectangle1">
+                <div class="text-moi">
+                    <div>M</div>
+                    <div>O</div>
+                    <div>I</div>
+                </div>
+            </div>
+            <div class="description">
+                <div class="photo-moi">
+                    <picture class="photo">
+                        <source media="(min-width: 992px)" srcset="assets/images/header-main/img3.jpg">
+                        <source media="(min-width: 576px)" srcset="assets/images/header-main/img2.jpg">
+                        <img src="assets/images/header-main/img1.jpg" alt="">
+                    </picture>
+                </div>
+
+                <!-- Cet input permet d'afficher ou de cacher la description-moi -->
+                <input type="checkbox" id="reste-texte" name="reste"/>
+
+                <div class="description-moi">
+                    <h3>Je suis Oivier Vernet. J'ai 31 ans. Je vais avoir 14 ans au Canada dans quelques semaines. Je suis marié depuis 2 ans maintenant. 
+                        En essayant de trouver ma voie, j'ai eu un parcous académique en montagne russe. J'ai fait 5 sessions en Soins infirmiers, mais, pour des différentes raisons, je n'ai pas pu terminer. 
+                        J'ai un DEP en Pose de système intérieur dans la construction. J'ai une attestation en gestion d'entreprise. 
+                        Maintenant, je pense que j'ai enfin trouvé ma voie en faisant une Technique d'intégration multimédias, mais l'annéee dernière ce n'était pas facile pour moi puisque, dans mon pays (Haïti), 
+                        des bandits avaient enlevé et tué des membres de ma famille qui sont encore là-bas. 
+                        Toutes ces épreuves me rendent plus fort et plus conscient de la chance que j'ai...
+                    </h3>
+                </div>
+                <label class="btn-voir" for="reste-texte">
+                    <h3 class="btn-mot-voir">Voir</h3>
+                    <span class="material-icons aggrandir">add</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- ============================== SECTION CONTENANT MON PARCOURS ACADÉMIQUE ============================== -->
+        <section id="formations">
+            <div class="forme rectangle2">
+                <!-- Ici, chaque lettre se trouve dans un div afin de permettre d'appliquer l'effet 3D sur chaque lettre et non sur le mot en un seul bloc -->
+                <div class="text-formations">
+                    <div>F</div>
+                    <div>O</div>
+                    <div>R</div>
+                    <div>M</div>
+                    <div>A</div>
+                    <div>T</div>
+                    <div>I</div>
+                    <div>O</div>
+                    <div>N</div>
+                    <div>S</div>
+                </div>
+            </div>
+            <div class="mescours">
+                <!-- Ce sont les inputs qui permettent d'afficher ou de cacher la description d'un cours en fonction du cours sélectionné -->
+                <input type="radio" id="afficher-description1" name="description-cachee" checked/> <!-- Ici, cet attribut checked permet de déterminer l'état de cocher par défaut de cet élément  -->
+                <input type="radio" id="afficher-description2" name="description-cachee"/>
+                <input type="radio" id="afficher-description3" name="description-cachee"/>
+                <input type="radio" id="afficher-description4" name="description-cachee"/>
+
+                <div class="ensemble-cours">
+                    <div class="cours cours1">
+                        <h3 class="nom-cours">Technique d'intégration multimédias</h3>
+                        <label class="voir-description" for="afficher-description1">
+                            <h3 class="mot-voir">Voir</h3>
+                            <span class="material-icons ouvrir">chevron_right</span>
+                        </label>
+                    </div>
+
+                    <div class="cours cours2">
+                        <h3 class="nom-cours">Pose de système intérieur</h3>
+                        <label class="voir-description" for="afficher-description2">
+                            <h3 class="mot-voir">Voir</h3>
+                            <span class="material-icons ouvrir">chevron_right</span>
+                        </label>
+                    </div>
+
+                    <div class="cours cours3">
+                        <h3 class="nom-cours">Gestion d'entreprise</h3>
+                        <label class="voir-description" for="afficher-description3">
+                            <h3 class="mot-voir">Voir</h3>
+                            <span class="material-icons ouvrir">chevron_right</span>
+                        </label>
+                    </div>
+
+                    <div class="cours cours4">
+                        <h3 class="nom-cours">Soins infirmiers</h3>
+                        <label class="voir-description" for="afficher-description4">
+                            <h3 class="mot-voir">Voir</h3>
+                            <span class="material-icons ouvrir">chevron_right</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ensemble-def">
+                    <div class="description-cours description-cours1">
+                        <h3>"L'intégratrice multimédia ou l'intégrateur multimédia intervient tout au long du processus de production des applications multimédias. 
+                        Son travail consiste principalement à assembler et à intégrer les éléments de contenus (textes, images, animations, vidéo, son) d'applications multimédias en ligne ou sur support et à procéder au codage de l'interactivité."
+                        </h3>
+                    </div>
+
+                    <div class="description-cours description-cours2">
+                        <h3>
+                            Durant la formation, vous apprendrez comment préparer, assembler et poser le matériel servant à l’installation et au montage de plafonds suspendus. 
+                            Vous verrez aussi comment poser des lattes, des carreaux acoustiques, des feuilles de gypse ainsi que des éléments métalliques servant à l’érection de murs et cloisons.
+                        </h3>
+                    </div>
+
+                    <div class="description-cours description-cours3">
+                        <h3>
+                            La gestion d’une entreprise consiste à identifier les actions de nature à conforter la stratégie, à en piloter la mise en œuvre opérationnelle et, enfin, à en contrôler les résultats. 
+                            Dit autrement, la gestion d’entreprise vise à rationaliser ainsi qu’à planifier la prise de décision opérationnelle, tout en optimisant l’utilisation des ressources, la cohésion des métiers et le développement de l’entreprise.
+                        </h3>
+                    </div>
+
+                    <div class="description-cours description-cours4">
+                        <h3>
+                            Partie intégrante du système de soins de santé, les soins infirmiers consistent dans la promotion de la santé, la prévention de la maladie, les soins aux personnes physiquement et mentalement mal portantes et aux personnes handicapées de tous âges, dans tous les contextes de soins primaires, secondaires et tertiaires, y compris les soins communautaires.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================== SECTION CONTENANT UNE RÉALISATION D'ANIMATION PAR KEYFRAME ============================== -->
+        <section id="realisations">
+            <div class="forme rectangle3">
+                <div class="text-realisations">
+                    <div>R</div>
+                    <div>É</div>
+                    <div>A</div>
+                    <div>L</div>
+                    <div>I</div>
+                    <div>S</div>
+                    <div>A</div>
+                    <div>T</div>
+                    <div>I</div>
+                    <div>O</div>
+                    <div>N</div>
+                    <div>S</div>
+                </div>
+            </div>
+            <div class="mesprojets">
+                <div class="projet">
+                    <div class="descarres">
+                        <div class="forme-carre">
+                            <div class="verticale-h"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-h"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-h"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-h"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-h"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-h"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-b"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-b"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-b"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-b"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-b"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="verticale-b"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-g"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-g"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-g"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-g"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-g"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-g"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-d"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-d"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-d"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-d"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-d"></div>
+                        </div>
+                        <div class="forme-carre">
+                            <div class="horizontale-d"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ici, c'est le bouton qui permet d'aller au haut de la page -->
+        <a href="#" class="material-icons btn-retour-haut">keyboard_double_arrow_up</a>
+
+        <!-- Ici, on retrouve l'ensemble des divs pour faire l'animation d'arrière-plan de la page web -->
+        <div id="animation">
+            <div class="carrer carre1"></div>
+            <div class="carrer carre2"></div>
+            <div class="carrer carre3"></div>
+            <div class="carrer carre4"></div>
+            <div class="carrer carre5"></div>
+            <div class="carrer carre6"></div>
+            <div class="carrer carre7"></div>
+            <div class="carrer carre8"></div>
+            <div class="carrer carre9"></div>
+            <div class="carrer carre10"></div>
+            <div class="carrer carre11"></div>
+            <div class="carrer carre12"></div>
+            <div class="carrer carre13"></div>
+            <div class="carrer carre14"></div>
+            <div class="carrer carre15"></div>
+            <div class="carrer carre16"></div>
+            <div class="carrer carre17"></div>
+            <div class="carrer carre18"></div>
+            <div class="carrer carre19"></div>
+            <div class="carrer carre20"></div>
+
+            <div class="cercle cercle1"></div>
+            <div class="cercle cercle2"></div>
+            <div class="cercle cercle3"></div>
+            <div class="cercle cercle4"></div>
+            <div class="cercle cercle5"></div>
+            <div class="cercle cercle6"></div>
+            <div class="cercle cercle7"></div>
+            <div class="cercle cercle8"></div>
+            <div class="cercle cercle9"></div>
+            <div class="cercle cercle10"></div>
+            <div class="cercle cercle11"></div>
+            <div class="cercle cercle12"></div>
+            <div class="cercle cercle13"></div>
+            <div class="cercle cercle14"></div>
+            <div class="cercle cercle15"></div>
+            <div class="cercle cercle16"></div>
+            <div class="cercle cercle17"></div>
+            <div class="cercle cercle18"></div>
+            <div class="cercle cercle19"></div>
+            <div class="cercle cercle20"></div>
+
+            <div class="ligne1triangle triangle1"></div>
+            <div class="ligne1triangle triangle2"></div>
+            <div class="ligne1triangle triangle3"></div>
+            <div class="ligne1triangle triangle4"></div>
+            <div class="ligne1triangle triangle5"></div>
+            <div class="ligne1triangle triangle6"></div>
+            <div class="ligne1triangle triangle7"></div>
+            <div class="ligne1triangle triangle8"></div>
+            <div class="ligne1triangle triangle9"></div>
+            <div class="ligne1triangle triangle10"></div>
+            <div class="ligne2triangle triangle11"></div>
+            <div class="ligne2triangle triangle12"></div>
+            <div class="ligne2triangle triangle13"></div>
+            <div class="ligne2triangle triangle14"></div>
+            <div class="ligne2triangle triangle15"></div>
+            <div class="ligne2triangle triangle16"></div>
+            <div class="ligne2triangle triangle17"></div>
+            <div class="ligne2triangle triangle18"></div>
+            <div class="ligne2triangle triangle19"></div>
+            <div class="ligne2triangle triangle20"></div>
+
+            <div class="ligne1trapeze trapeze1"></div>
+            <div class="ligne1trapeze trapeze2"></div>
+            <div class="ligne1trapeze trapeze3"></div>
+            <div class="ligne1trapeze trapeze4"></div>
+            <div class="ligne1trapeze trapeze5"></div>
+            <div class="ligne1trapeze trapeze6"></div>
+            <div class="ligne1trapeze trapeze7"></div>
+            <div class="ligne1trapeze trapeze8"></div>
+            <div class="ligne1trapeze trapeze9"></div>
+            <div class="ligne1trapeze trapeze10"></div>
+            <div class="ligne2trapeze trapeze11"></div>
+            <div class="ligne2trapeze trapeze12"></div>
+            <div class="ligne2trapeze trapeze13"></div>
+            <div class="ligne2trapeze trapeze14"></div>
+            <div class="ligne2trapeze trapeze15"></div>
+            <div class="ligne2trapeze trapeze16"></div>
+            <div class="ligne2trapeze trapeze17"></div>
+            <div class="ligne2trapeze trapeze18"></div>
+            <div class="ligne2trapeze trapeze19"></div>
+            <div class="ligne2trapeze trapeze20"></div>
+        </div>
+    </main>
+
+    <footer>
+        <section id="partie1">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/images/header-main/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <div class="rs-infos">
+                <div class="rsociaux">
+                    <a href="#"><img src="assets/images/footer/whatsapp.png" alt="icone de whatsapp"></a>
+                    <a href="#"><img src="assets/images/footer/facebook.png" alt="icone de facebook"></a>
+                    <a href="#"><img src="assets/images/footer/instagram.png" alt="icone d'instagram"></a>
+                </div>
+
+                <div class="infolettre">
+                        <label for="email">S'inscrire à mon infolettre</label>
+                        <input type="email" id="courriel" name="courriel" placeholder="courrielid@example.ca">
+                        <input type="submit" id="btninscrire" value="S'inscrire">
+                </div>
+            </div>
+
+            <div class="reprise-menu">
+                    <h3 class="titre-section">Menu</h3>
+                <ul>
+                    <a class="menu-pied menupied1" href="#moi"><li>Moi</li></a>
+                    <a class="menu-pied menupied2" href="#formations"> <li>Formations</li></a>
+                    <a class="menu-pied menupied3" href="#realisations"><li>Réalisations</li></a>
+                </ul>
+            </div>
+
+            <div id="reprises-contact">
+                <h2 class="reprise-coordonnees">
+                    <span class="material-icons telephone-pied">smartphone</span>
+                    514-207-2249
+                </h2>
+                <h2 class="reprise-coordonnees">
+                    <span class="material-icons courriel-pied">email</span>
+                    olivier_vernet@yahoo.ca
+                </h2>
+                <h2 class="reprise-coordonnees"><span class="material-icons liens-pied">link</span>
+
+                </h2>
+                <h2 class="reprise-coordonnees"><span class="material-icons liens-pied">link</span>
+
+                </h2>
+            </div>
+            
+        </section>
+
+        <section id="partie2"></section>
+
+        <section id="partie3">
+            <h6>Copyright © 2025 Olivier Vernet</h6>
+        </section>
+    </footer>
+</body>
+</html>

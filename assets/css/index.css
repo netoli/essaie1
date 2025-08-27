@@ -1,0 +1,1439 @@
+/*============================== PARAMÉTRAGE DE STYLE GÉNÉRAL PAR DÉFAUT ============================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    width: 100vw;
+    height: 100vh;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+/* Ici, on définit la typographie par défaut des différentes lignes de texte contenues dans ces balises */
+h1, h2, h3, h4, h6, a, li{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+a, li{
+    text-decoration: none;
+    list-style: none;
+}
+/* Ici, on cache l'ensemble des cases à cocher de type "checkbox" ou "rodio" sur la page */
+input[type=checkbox], input[type=radio]{
+    display: none;
+}
+/* Ici, on définit le style par défaut de l'ensemble des matérial-icons se trouvant sur la page */
+.material-icons{
+    color: cadetblue;
+    filter: drop-shadow(2px 1px 1px black);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+
+/*============================== HEADER ============================== */
+header{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px 0 12px;
+    background-color: cadetblue;
+    filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.5));
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+/* Ici, on définit le style des contenus pour mon profil*/
+.profil{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+}
+.photo-profil{
+    width: 3rem;
+    height: 3rem;
+    background-color: black;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.photo-profil > img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.mon-nom{
+    font-size: 1rem;
+}
+.mon-titre{
+    font-size: 0.8rem;
+}
+.mon-nom, .mon-titre{
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+/* Ici, on définit le style des contenus de la barre de naigation contenant le menu de navigation */
+.barre-navigation{
+    display: flex;
+}
+.navigation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 100vh;
+    background-color:cadetblue;
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    opacity: 0;
+    translate: 100%;
+    transition: translate 500ms, opacity 500ms 100ms, width 1s 150ms;
+    filter: drop-shadow(0 0 3px rgba(245, 245, 220, 0.3));
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 2vw, 9rem);
+    width: 60vw;
+    height: 2rem;
+    text-decoration: none;
+    color: black;
+    margin: 1rem;
+    background-color: rgba(245, 245, 220, 0.5);
+    translate: 0 -300%;
+    opacity: 0;
+    transition: opacity 1s, translate 500ms;
+}
+.menu:hover{
+    filter: drop-shadow(3px 3px 0 white);
+    color: cadetblue;
+    font-weight: 900;
+}
+
+.contact{
+    width: 60vw;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(245, 245, 220, 0.5);
+    translate: 0 300%;
+    opacity: 0;
+    transition: opacity 1s, translate 500ms;
+}
+.coordonnees{
+    display: flex;
+    align-items: center;
+    margin: 0 15px 0 15px;
+    font-size: clamp(1rem, 2vw, 9rem);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.coordonnees:hover{
+    transform: scale(1.05);
+    color: cadetblue;
+}
+.coordonnees > .telephone, .courriel, .liens{
+    margin: 6px;
+}
+
+#bouton-menu-burger:checked ~ header > .barre-navigation > .bouton{
+    rotate: 360deg;
+    border-radius: 50%;
+    border: none;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation{
+    opacity: 1;
+    translate: 0;
+    width: 100vw;
+    z-index: 6;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .menu{
+    opacity: 1;
+    translate: 0 0;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .menu1{
+    transition-delay: 300ms;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .menu2{
+    transition-delay: 600ms;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .menu3{
+    transition-delay: 900ms;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .contact{
+    transition-delay: 1200ms;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .contact > .coordonnees{
+    transition-delay: 1500ms;
+}
+
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .contact{
+    opacity: 1;
+    translate: 0 0;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation > .navigation > .contact > .coordonnees{
+    opacity: 1;
+}
+.bouton{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: rotate 500ms, border-radius 1s, border 1s;
+}
+.bouton:hover{
+    scale: 1.1;
+}
+.ligne{
+    width: 75%;
+    height: 0.1rem;
+    background-color: black;
+    border-radius: 25px;
+    transition: translate 300ms 300ms, background-color 1.2s, width 500ms;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation >  .bouton > .ligne1{
+    width: 100%;
+    background-color: whitesmoke;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation >  .bouton > .ligne2{
+    width: 80%;
+    background-color: whitesmoke;
+    rotate: 90deg;
+    translate: -60% 225%;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation >  .bouton > .ligne3{
+    width: 100%;
+    translate: 15% -200%;
+    background-color: whitesmoke;
+}
+#bouton-menu-burger:checked ~ header > .barre-navigation >  .bouton > .ligne4{
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+
+/*============================== MAIN ============================== */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(95, 158, 160, 0.5), rgba(245, 245, 220, 0.5));
+}
+#moi, #formations, #realisations{
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#moi, #formations{
+    border-bottom: 2px solid cadetblue;
+}
+.titre{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 
+    0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 
+    0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+    z-index: 1;
+    font-family: "Boldonse", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+.lettre{
+    font-size: clamp(2rem, 5vw, 3rem);
+    animation: apparition-titre ease-in-out 2s alternate, apparition-roulement ease-in 2s 2s;
+}
+@keyframes apparition-titre{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+        z-index: -1;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 1;
+    }
+}
+
+@keyframes apparition-roulement {
+    from {
+        transform: perspective(100px) rotateY(0deg);
+    }
+    to{
+        transform: perspective(300px) rotateY(360deg);
+    }
+}
+
+.bienvenue{
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mot-bienvenue{
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(2rem, 3vw, 6rem);
+    white-space: nowrap;
+    animation: defilement linear 9s 1s infinite alternate;
+    z-index: 0;
+}
+@keyframes defilement{
+    0%{
+        translate: 100vw;
+    }
+    100%{
+        translate: -100vw;
+    }
+}
+.forme{
+    opacity: 0;
+    translate: 0 -100%;
+    transition: opacity 1s, translate 1s;
+}
+.rectangle1, .rectangle2, .rectangle3{
+    width: 90%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.rectangle2{
+    position: absolute;
+    top: 15px;
+}
+.text-moi, .text-formations, .text-realisations{
+    display: flex;
+    font-size: clamp(1rem, 2vw, 4rem);
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 
+    0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 
+    0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+    font-family: "Boldonse", system-ui;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 1rem;
+}
+.description{
+    width: 90%;
+    height: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 6px;
+    background-color: whitesmoke;
+    position: static;
+}
+.description > .photo-moi{
+    height: 60%;
+}
+.description > .photo-moi > .photo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.description-moi{
+    max-height: 10%;
+    margin: 24px;
+    font-size: clamp(0.75rem, 1.4vw, 3rem);
+    overflow: hidden;
+    transition: max-height 500ms;
+}
+.btn-voir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-mot-voir{
+    text-transform: full-width;
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    color: cadetblue;
+    transition: scale 500ms, text-transform 500ms, color 500ms, filter 500ms;
+    filter: drop-shadow(2px 1px 1px black);
+}
+.btn-voir > .aggrandir{
+    font-size: 2rem;
+    transition: rotate 500ms, font-size 500ms, filter 500ms;
+    margin: 0;
+}
+#reste-texte:checked ~ label > .aggrandir{
+    rotate: 135deg;
+    font-size: 1.5rem;
+    color: black;
+    filter: drop-shadow(0 0 0);
+}
+#reste-texte:checked ~ label > .btn-mot-voir{
+    text-transform: lowercase;
+    color: black;
+    scale: 1.2;
+    filter: drop-shadow(0 0 0);
+}
+#reste-texte:checked ~ .description-moi{
+    max-height: 100%;
+}
+.mescours{
+    width: 90%;
+    height: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.ensemble-cours{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.ensemble-def{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(255, 248, 220, 0.5);
+    border: 1px solid cadetblue;
+}
+.cours{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    filter: drop-shadow(1px 1px 3px);
+}
+.nom-cours{
+    margin-top: 12px;
+    font-size: clamp(1rem, 1.5vw, 9rem);
+}
+.voir-description{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: coral;
+}
+.voir-description > .mot-voir{
+    text-transform: full-width;
+    font-size: clamp(1rem, 1.5vw, 9rem);
+    color: cadetblue;
+    filter: drop-shadow(2px 1px 1px black);
+    transition: text-transform 500ms, filter 500ms;
+}
+.voir-description > .ouvrir{
+    rotate: -90deg;
+    transition: rotate 500ms;
+}
+#afficher-description1:checked ~ .ensemble-cours > .cours1 > .voir-description > .ouvrir,
+#afficher-description2:checked ~ .ensemble-cours > .cours2 > .voir-description > .ouvrir,
+#afficher-description3:checked ~ .ensemble-cours > .cours3 > .voir-description > .ouvrir,
+#afficher-description4:checked ~ .ensemble-cours > .cours4 > .voir-description > .ouvrir{
+    rotate: 90deg;
+    color: black;
+    filter: drop-shadow(0 0 0);
+}
+#afficher-description1:checked ~ .ensemble-cours > .cours1 > .voir-description > .mot-voir,
+#afficher-description2:checked ~ .ensemble-cours > .cours2 > .voir-description > .mot-voir,
+#afficher-description3:checked ~ .ensemble-cours > .cours3 > .voir-description > .mot-voir,
+#afficher-description4:checked ~ .ensemble-cours > .cours4 > .voir-description > .mot-voir{
+    color: black;
+    filter: drop-shadow(0 0 0);
+    text-transform: none;
+}
+#afficher-description1:checked ~ .ensemble-def > .description-cours1,
+#afficher-description2:checked ~ .ensemble-def > .description-cours2,
+#afficher-description3:checked ~ .ensemble-def > .description-cours3,
+#afficher-description4:checked ~ .ensemble-def > .description-cours4
+{
+    display: block;
+}
+.description-cours{
+    width: 90%;
+    height: 100%;
+    margin: 1rem;
+    display: none;
+    transition: display 500ms;
+    text-align: center;
+}
+
+.mesprojets{
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.projet{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.descarres{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: absolute;
+}
+.forme-carre{
+    width: 15%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: coral;
+    animation: changer-taille2 3s infinite alternate;
+}
+.forme-carre:nth-child(even){
+    background-color: cadetblue;
+    animation: changer-taille1 3s infinite alternate;
+}
+
+#position1, #position2, #position3, #position4{
+    position: absolute;
+    z-index: -1;
+}
+
+.verticale-h, .verticale-b{
+    animation: couleur-perspective 3s 300ms infinite alternate;
+}
+.verticale-h, .verticale-b, .horizontale-g, .horizontale-d{
+    width: 0.5rem;
+    height: 6rem;
+    background-color: cadetblue;
+}
+.horizontale-d, .horizontale-g{
+    rotate: 90deg;
+    animation: rotation-et-transparence 3s 500ms infinite alternate;
+}
+.horizontale-g{
+    transform-origin: center;
+}
+.horizontale-d{
+    transform-origin: center;
+}
+
+@keyframes rotation-et-transparence{
+    0%{
+        opacity: 0;
+        height: 0;
+        animation-timing-function: cubic-bezier(.3,.7,.7,.2);
+    }
+    50%{
+        rotate: 720deg;
+        scale: 1.2;
+    }
+    25%, 75%{
+        rotate: 1440deg;
+    }
+    100%{
+        opacity: 1;
+        height: 9rem;
+        background-color: brown;
+        border-radius: 50%;
+        animation-timing-function: cubic-bezier(0,1,1,0);
+    }
+}
+
+@keyframes couleur-perspective{
+    0%{
+        transform: rotate3d(1, 1, 1, 0deg);
+        animation-timing-function: cubic-bezier(0,0,0,1);
+    }
+    100%{
+        background-color: brown;
+        transform: rotate3d(-2, -2, -2, 540deg);
+        animation-timing-function: cubic-bezier(0,1,0,1);
+    }
+}
+@keyframes changer-taille1{
+    0%{
+        transform:scale3d(0.5, 0.5, 0.5);
+        animation-timing-function: cubic-bezier(1,0,1,0);
+    }
+    100%{
+        transform:scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(0,1,0,1);
+    }
+}
+@keyframes changer-taille2{
+    0%{
+        transform:scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(1,0,1,0);
+    }
+    100%{
+        transform:scale3d(0.5, 0.5, 0.5);
+        animation-timing-function: cubic-bezier(0,1,0,1);
+        z-index: 1;
+    }
+}
+
+
+
+
+#bouton-menu-burger:checked ~ main > .btn-retour-haut{
+    display: none;
+}
+
+.btn-retour-haut {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	padding: 0.5rem;
+	background-color: beige;
+	border-radius: 50%;
+    z-index: 4;
+}
+.btn-retour-haut:hover{
+    scale: 1.1;
+}
+
+
+/*============================== FOOTER============================== */
+footer{
+    width: 100vw;
+    height: 30vh;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0px -1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+#partie1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.rs-infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo > a > img{
+    width: 3rem;
+    height: 3rem;
+    margin: 5px;
+}
+.logo > a > img:hover{
+    scale: 1.1;
+}
+.rsociaux{
+    display: flex;
+}
+.rsociaux > a > img{
+    width: 2rem;
+    height: 2rem;
+    margin: 5px;
+}
+.rsociaux > a > img:hover{
+    scale: 1.05;
+}
+.infolettre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infolettre > label{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1rem, 1vw, 9rem);
+    text-wrap: nowrap;
+}
+#courriel{
+    padding: 0 2rem 0.5rem 1rem;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    border: none;
+}
+#btninscrire{
+    width: 6rem;
+    height: 1.2rem;
+    border: 0.5px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: cadetblue;
+    font-size: 0.7rem;
+    text-align: center;
+}
+#btninscrire:hover{
+    scale: 1.05;
+    color: white;
+}
+.reprise-menu > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.titre-section{
+    font-size: clamp(1.5rem, 2vw, 9rem);
+    font-weight: 600;
+    margin-left: 3px;
+}
+.reprise-menu > ul > a{
+    text-decoration: none;
+}
+.reprise-menu > ul > a > li{
+    color: black;
+    font-size: clamp(1rem, 1.5vw, 9rem);
+    margin-top: 1.2rem;
+}
+.reprise-menu > ul > a > li:hover{
+    scale: 1.05;
+    color: cadetblue;
+}
+#reprises-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.reprise-coordonnees{
+    font-size: clamp(1rem, 1.5vw, 9rem);
+    display: flex;
+    align-items: center;
+}
+.reprise-coordonnees:hover{
+    color: cadetblue;
+}
+.reprise-coordonnees > .telephone-pied, .courriel-pied, .liens-pied{
+    margin: 6px;
+    font-size: clamp(1rem, 1.5vw, 9rem);
+}
+
+
+#partie2{
+    width: 100%;
+    height: 3px;
+    background-color: cadetblue;
+    margin-top: 1rem;
+}
+
+#partie3{
+    width: 93%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#partie3 > h6{
+    margin-top: 6px;
+}
+
+
+/*------------------------------ ANIMATION D'ARRIÈRE-PLAN ------------------------------ */
+#animation{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.carrer, .cercle, .ligne1triangle, .ligne2triangle, .ligne1trapeze, .ligne2trapeze{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+}
+
+/* Les animations par images clées 'changement-taille' et 'changement-couleur' sont communes à tous les animations d'arrière-plan */
+@keyframes changement-taille{
+    from{
+        scale: 0.15;
+    }
+    50%{
+        scale: 0.45;
+    }
+    25%, 75%{
+        scale: 0.75;
+    }
+    to{
+        scale: 1;
+    }
+}
+@keyframes changement-couleur{
+    from{
+        background-color: cadetblue;
+    }
+    50%{
+        background-color: darkorange;
+    }
+    25%, 75%{
+        background-color: darkcyan;
+    }
+    to{
+        background-color: brown;
+    }
+}
+
+/* Ici, ce sont les classes générales des différents divs sur lesquels on applique les animations par images clées */
+.carrer{
+    left: 0;
+    animation: deplacement-carre-horizontal 12s 500ms infinite alternate, modification-forme-carre 6s 500ms infinite alternate, changement-couleur 3s 500ms infinite alternate, changement-taille 6s infinite alternate;
+    filter: blur(12px);
+}
+.cercle{
+    right: 0;
+    animation: deplacement-cercle-horizontal 12s 500ms infinite alternate, modification-forme-cercle 6s 500ms infinite alternate, changement-couleur 3s 500ms infinite alternate, changement-taille 6s infinite alternate;
+    filter: blur(12px);
+}
+.ligne1triangle{
+    top: 0;
+    animation: changement-taille 9s infinite alternate, changement-couleur 3s infinite alternate, modification-forme-triangle 6s infinite alternate, deplacement-vertical-ligne1triangle 18s 500ms infinite alternate;
+    filter: blur(12px);
+}
+.ligne2triangle{
+    bottom: 0;
+    animation: changement-taille 9s infinite alternate, changement-couleur 3s infinite alternate, modification-forme-triangle 6s infinite alternate, deplacement-vertical-ligne2triangle 18s 500ms infinite alternate;
+    filter: blur(12px);
+}
+.ligne1trapeze{
+    top: 0;
+    animation: changement-taille 9s infinite alternate, modification-forme-trapeze 1s infinite alternate, changement-couleur 3s infinite alternate, deplacement-vertical-ligne1trapeze 18s 500ms infinite alternate;
+    filter: blur(12px);
+}
+.ligne2trapeze{
+    bottom: 0;
+    animation: changement-taille 9s infinite alternate, modification-forme-trapeze 1s infinite alternate, changement-couleur 3s infinite alternate, deplacement-vertical-ligne2trapeze 18s 500ms infinite alternate;
+    filter: blur(12px);
+}
+
+
+/* Les animations par images clées pour les classes de div 'carrer' et 'cercle'*/
+@keyframes modification-forme-carre{
+    0%, 10%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    11%, 20%{
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    }
+    21%, 30%{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+    31%, 40%{
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    41%, 50%{
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    }
+    51%, 60%{
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+    61%, 70%{
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    }
+    71%, 80%{
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    }
+    81%, 90%{
+        clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+    }
+    91%, 100%{
+        clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+    }
+}
+
+@keyframes modification-forme-cercle{
+    0%, 10%{
+        clip-path: circle(50% at 50% 50%);
+    }
+    11%, 20%{
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+    21%, 30%{
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    }
+    31%, 40%{
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    }
+    41%, 50%{
+        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    }
+    51%, 60%{
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+    }
+    61%, 70%{
+        clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+    }
+    71%, 80%{
+        clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    }
+    81%, 90%{
+        clip-path: circle(50% at 50% 50%);
+    }
+    91%, 100%{
+        clip-path: ellipse(50% 50% at 50% 50%);
+    }
+}
+
+@keyframes deplacement-carre-horizontal{
+    from{
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0,.45,1,1);
+    }
+    to{
+        transform: translateX(100vw);
+        animation-timing-function: cubic-bezier(0,.84,.3,.90);
+    }
+}
+
+@keyframes deplacement-cercle-horizontal{
+    from{
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0,.45,1,1);
+    }
+    to{
+        transform: translateX(-100vw);
+        animation-timing-function: cubic-bezier(0,.84,.3,.90);
+    }
+}
+/* Ensemble des carrées*/
+.carre1{
+    top: 0;
+    animation-delay: 50ms;
+}
+.carre2{
+    top: 17vh;
+    animation-delay: 100ms;
+}
+.carre3{
+    top: 34vh;
+    animation-delay: 150ms;
+}
+.carre4{
+    top: 51vh;
+    animation-delay: 200ms;
+}
+.carre5{
+    top: 68vh;
+    animation-delay: 250ms;
+}
+.carre6{
+    top: 85vh;
+    animation-delay: 300ms;
+}
+.carre7{
+    top: 102vh;
+    animation-delay: 350ms;
+}
+.carre8{
+    top: 119vh;
+    animation-delay: 400ms;
+}
+.carre9{
+    top: 136vh;
+    animation-delay: 450ms;
+}
+.carre10{
+    top: 153vh;
+    animation-delay: 500ms;
+}
+.carre11{
+    top: 170vh;
+    animation-delay: 550ms;
+}
+.carre12{
+    top: 187vh;
+    animation-delay: 600ms;
+}
+.carre13{
+    top: 204vh;
+    animation-delay: 650ms;
+}
+.carre14{
+    top: 221vh;
+    animation-delay: 700ms;
+}
+.carre15{
+    top: 238vh;
+    animation-delay: 750ms;
+}
+.carre16{
+    top: 255vh;
+    animation-delay: 800ms;
+}
+.carre17{
+    top: 272vh;
+    animation-delay: 850ms;
+}
+.carre18{
+    top: 289vh;
+    animation-delay: 900ms;
+}
+.carre19{
+    top: 306vh;
+    animation-delay: 950ms;
+}
+.carre20{
+    top: 323vh;
+    animation-delay: 1s;
+}
+
+/* Ensemble des cercles*/
+.cercle1{
+    top: 0;
+    animation-delay: 50ms;
+}
+.cercle2{
+    top: 17vh;
+    animation-delay: 100ms;
+}
+.cercle3{
+    top: 34vh;
+    animation-delay: 150ms;
+}
+.cercle4{
+    top: 51vh;
+    animation-delay: 200ms;
+}
+.cercle5{
+    top: 68vh;
+    animation-delay: 250ms;
+}
+.cercle6{
+    top: 85vh;
+    animation-delay: 300ms;
+}
+.cercle7{
+    top: 102vh;
+    animation-delay: 350ms;
+}
+.cercle8{
+    top: 119vh;
+    animation-delay: 400ms;
+}
+.cercle9{
+    top: 136vh;
+    animation-delay: 450ms;
+}
+.cercle10{
+    top: 153vh;
+    animation-delay: 500ms;
+}
+.cercle11{
+    top: 170vh;
+    animation-delay: 550ms;
+}
+.cercle12{
+    top: 187vh;
+    animation-delay: 600ms;
+}
+.cercle13{
+    top: 204vh;
+    animation-delay: 650ms;
+}
+.cercle14{
+    top: 221vh;
+    animation-delay: 700ms;
+}
+.cercle15{
+    top: 238vh;
+    animation-delay: 750ms;
+}
+.cercle16{
+    top: 255vh;
+    animation-delay: 800ms;
+}
+.cercle17{
+    top: 272vh;
+    animation-delay: 850ms;
+}
+.cercle18{
+    top: 289vh;
+    animation-delay: 900ms;
+}
+.cercle19{
+    top: 306vh;
+    animation-delay: 950ms;
+}
+.cercle20{
+    top: 323vh;
+    animation-delay: 1s;
+}
+
+
+/* Les animations par images clées pour les classes de div 'triangle' */
+@keyframes deplacement-vertical-ligne1triangle{
+    from{
+        transform: translateY(-10vh);
+        animation-timing-function: cubic-bezier(1,0,1,1);
+    }
+    25%, 75%{
+        animation-timing-function: cubic-bezier(0,.5,0,.5);
+    }
+    to{
+        transform: translateY(330vh);
+        animation-timing-function: cubic-bezier(1,0,1,0);
+    }
+}
+@keyframes deplacement-vertical-ligne2triangle{
+    from{
+        transform: translateY(230vh);
+        animation-timing-function: cubic-bezier(1,0,1,1);
+    }
+    25%, 75%{
+        animation-timing-function: cubic-bezier(0,.5,0,.5);
+    }
+    to{
+        transform: translateY(-270vh);
+        animation-timing-function: cubic-bezier(1,0,1,0);
+    }
+}
+@keyframes modification-forme-triangle{
+    0%, 25%{
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        animation-timing-function: cubic-bezier(1,0,0,0);
+    }
+    26%, 50%{
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        animation-timing-function: cubic-bezier(1,1,0,1);
+    }
+    51%, 75%{
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        animation-timing-function: cubic-bezier(1,.4,0,.6);
+    }
+    76%, 100%{
+        clip-path: circle(50% at 50% 50%);
+        animation-timing-function: cubic-bezier(1,0,0,0);
+    }
+}
+/* Ensemble des triangles*/
+.triangle1{
+    left: 0;
+    animation-delay: 50ms;
+}
+.triangle2{
+    left: 10vw;
+    animation-delay: 100ms;
+}
+.triangle3{
+    left: 20vw;
+    animation-delay: 150ms;
+}
+.triangle4{
+    left: 30vw;
+    animation-delay: 200ms;
+}
+.triangle5{
+    left: 40vw;
+    animation-delay: 250ms;
+}
+.triangle6{
+    left: 50vw;
+    animation-delay: 300ms;
+}
+.triangle7{
+    left: 60vw;
+    animation-delay: 350ms;
+}
+.triangle8{
+    left: 70vw;
+    animation-delay: 400ms;
+}
+.triangle9{
+    left: 80vw;
+    animation-delay: 450ms;
+}
+.triangle10{
+    left: 90vw;
+    animation-delay: 500ms;
+}
+.triangle11{
+    left: 0;
+    animation-delay: 550ms;
+}
+.triangle12{
+    left: 10vw;
+    animation-delay: 600ms;
+}
+.triangle13{
+    left: 20vw;
+    animation-delay: 650ms;
+}
+.triangle14{
+    left: 30vw;
+    animation-delay: 700ms;
+}
+.triangle15{
+    left: 40vw;
+    animation-delay: 750ms;
+}
+.triangle16{
+    left: 50vw;
+    animation-delay: 800ms;
+}
+.triangle17{
+    left: 60vw;
+    animation-delay: 850ms;
+}
+.triangle18{
+    left: 70vw;
+    animation-delay: 900ms;
+}
+.triangle19{
+    left: 80vw;
+    animation-delay: 950ms;
+}
+.triangle20{
+    left: 90vw;
+    animation-delay: 1s;
+}
+
+
+/* Les animations par images clées pour les classes de div 'trapeze' */
+@keyframes deplacement-vertical-ligne1trapeze{
+    from{
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(.24,.71,.37,.85);
+    }
+    25%, 75%{
+        animation-timing-function: cubic-bezier(1,0,1,1);
+    }
+    to{
+        transform: translateY(330vh);
+        animation-timing-function: cubic-bezier(0,.5,0,.5);
+    }
+}
+@keyframes deplacement-vertical-ligne2trapeze{
+    from{
+        transform: translateY(600vh);
+        animation-timing-function: cubic-bezier(.24,.71,.37,.85);
+    }
+    25%, 75%{
+        animation-timing-function: cubic-bezier(1,0,1,1);
+    }
+    to{
+        transform: translateY(-100vh);
+        animation-timing-function: cubic-bezier(0,.5,0,.5);
+    }
+}
+@keyframes modification-forme-trapeze{
+    0%, 25%{
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        animation-timing-function: cubic-bezier(1,0,0,0);
+    }
+    26%, 50%{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        animation-timing-function: cubic-bezier(1,1,0,1);
+    }
+    51%, 75%{
+        clip-path: inset(5% 20% 15% 10%);
+        animation-timing-function: cubic-bezier(0,1,1,1);
+    }
+    76%, 100%{
+        clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+        animation-timing-function: cubic-bezier(1,0,0,0);
+    }
+}
+/* Ensemble des trapèzes */
+.trapeze1{
+    right: 0;
+    animation-delay: 50ms;
+}
+.trapeze2{
+    right: 10vw;
+    animation-delay: 100ms;
+}
+.trapeze3{
+    right: 20vw;
+    animation-delay: 150ms;
+}
+.trapeze4{
+    right: 30vw;
+    animation-delay: 200ms;
+}
+.trapeze5{
+    right: 40vw;
+    animation-delay: 250ms;
+}
+.trapeze6{
+    right: 50vw;
+    animation-delay: 300ms;
+}
+.trapeze7{
+    right: 60vw;
+    animation-delay: 350ms;
+}
+.trapeze8{
+    right: 70vw;
+    animation-delay: 400ms;
+}
+.trapeze9{
+    right: 80vw;
+    animation-delay: 450ms;
+}
+.trapeze10{
+    right: 90vw;
+    animation-delay: 500ms;
+}
+.trapeze11{
+    right: 0;
+    animation-delay: 550ms;
+}
+.trapeze12{
+    right: 10vw;
+    animation-delay: 600ms;
+}
+.trapeze13{
+    right: 20vw;
+    animation-delay: 650ms;
+}
+.trapeze14{
+    right: 30vw;
+    animation-delay: 700ms;
+}
+.trapeze15{
+    right: 40vw;
+    animation-delay: 750ms;
+}
+.trapeze16{
+    right: 50vw;
+    animation-delay: 800ms;
+}
+.trapeze17{
+    right: 60vw;
+    animation-delay: 850ms;
+}
+.trapeze18{
+    right: 70vw;
+    animation-delay: 900ms;
+}
+.trapeze19{
+    right: 80vw;
+    animation-delay: 950ms;
+}
+.trapeze20{
+    right: 90vw;
+    animation-delay: 1s;
+}
+
+
+/*============================== MÉDIAS QUERY ============================== */
+/*------------------------------ MÉDIAS QUERY POUR UNE TAILLE MAXIMUM DU VIEWPORT ------------------------------ */
+/* Ici, ces paramètres permettent d'enlever la section des contacts dans le 'footer' puiqu'elle se trouve dans
+le menu de navigation du bouton burger */
+@media (max-width: 575px){
+    #reprises-contact{
+        display: none;
+    }
+}
+
+/*------------------------------ MÉDIAS QUERY POUR UNE TAILLE MINIMUM DU VIEWPORT ------------------------------ */
+/* Ici, les modifications sont apportées une fois que le viewport attiegne la largeur minimum de 576px */
+@media (min-width: 576px){
+    .barre-navigation{
+        width: 30vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .navigation{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 0;
+        background-color: transparent;
+        position: static;
+        translate: 0;
+        opacity: 1;
+    }
+    .menu{
+        background-color: transparent;
+        translate: 0 0;
+        opacity: 1;
+        flex-grow: 1;
+        margin: 0.5rem;
+    }
+    .menu:hover{
+        filter: drop-shadow(1px 1px 0 black);
+        color: white;
+        font-weight: 450;
+    }
+    .menu::before{
+        content: "";
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: white;
+        transform: scaleX(0);
+        transition: all 0.5s ease;
+    }
+    .menu:hover::before{
+        transform: scaleX(1);
+    }
+    .contact{
+        display: none;
+    }
+    .coordonnees{
+        display: none;
+    }
+    .bouton{
+        display: none;
+    }
+    .mescours{
+        height: 80%;
+        flex-direction: row;
+    }
+    .ensemble-cours{
+        width: 45%;
+        height: 100%;
+    }
+    .ensemble-def{
+        width: 50%;
+        height: 100%;
+    }
+    .cours{
+        flex-direction: row;
+    }
+    .voir-description{
+        width: 30%;
+        height: 100%;
+    }
+    .nom-cours{
+        margin: 0;
+    }
+    .voir-description > .ouvrir{
+        rotate: -180deg;
+        font-size: 2rem;
+    }
+    #afficher-description1:checked ~ .ensemble-cours > .cours1 > .voir-description > .ouvrir,
+    #afficher-description2:checked ~ .ensemble-cours > .cours2 > .voir-description > .ouvrir,
+    #afficher-description3:checked ~ .ensemble-cours > .cours3 > .voir-description > .ouvrir,
+    #afficher-description4:checked ~ .ensemble-cours > .cours4 > .voir-description > .ouvrir{
+    rotate: 0deg;
+}
+}
